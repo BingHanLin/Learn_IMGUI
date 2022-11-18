@@ -1,0 +1,91 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "Ninja-MSVC-Debug-Config",
+            "displayName": "Ninja-MSVC-Debug-Config",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "installDir": "${sourceDir}/bin/Debug/${presetName}",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_C_COMPILER": "cl.exe",
+                "CMAKE_CXX_COMPILER": "cl.exe",
+                "GLFW_DIR": {
+                    "type": "PATH",
+                    "value": "${sourceDir}/glfw"
+                },
+                "IMGUI_DIR": {
+                    "type": "PATH",
+                    "value": "${sourceDir}/imgui"
+                },
+                "VULKAN_SDK": {
+                    "type": "PATH",
+                    "value": "D:/VulkanSDK/1.3.204.0"
+                }
+            },
+            "environment": {
+                "VCToolsVersion": "14.29.30133",
+                "WindowsSDKVersion": "10.0.19041.0",
+                "VCArch": "x64",
+                "VCToolsInstallDir": "C:/Applications/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/$env{VCToolsVersion}",
+                "WindowsSdkDir": "C:/Windows Kits/10",
+                "WindowsSdkIncVerDir": "$env{WindowsSdkDir}/Include/$env{WindowsSDKVersion}",
+                "WindowsSdkLibVerDir": "$env{WindowsSdkDir}/Lib/$env{WindowsSDKVersion}",
+                "INCLUDE": "$env{VCToolsInstallDir}/ATLMFC/include;$env{VCToolsInstallDir}/include;$env{WindowsSdkIncVerDir}/ucrt;$env{WindowsSdkIncVerDir}/shared;$env{WindowsSdkIncVerDir}/um;$env{WindowsSdkIncVerDir}/winrt;$env{WindowsSdkIncVerDir}/cppwinrt",
+                "LIB": "$env{VCToolsInstallDir}/ATLMFC/lib/$env{VCArch};$env{VCToolsInstallDir}/lib/$env{VCArch};$env{WindowsSdkLibVerDir}/ucrt/$env{VCArch};$env{WindowsSdkLibVerDir}/um/$env{VCArch}",
+                "PATH": "$penv{PATH};$env{VCToolsInstallDir}/bin/HostX64/$env{VCArch};$env{WindowsSdkDir}/bin/$env{WindowsSDKVersion}/$env{VCArch}"
+            }
+        },
+        {
+            "name": "Ninja-MSVC-Release-Config",
+            "displayName": "Ninja-MSVC-Release-Config",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "installDir": "${sourceDir}/bin/Debug/${presetName}",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_C_COMPILER": "cl.exe",
+                "CMAKE_CXX_COMPILER": "cl.exe",
+                "GLFW_DIR": {
+                    "type": "PATH",
+                    "value": "${sourceDir}/glfw"
+                },
+                "IMGUI_DIR": {
+                    "type": "PATH",
+                    "value": "${sourceDir}/imgui"
+                },
+                "VULKAN_SDK": {
+                    "type": "PATH",
+                    "value": "D:/VulkanSDK/1.3.204.0"
+                }
+            },
+            "environment": {
+                "VCToolsVersion": "14.29.30133",
+                "WindowsSDKVersion": "10.0.19041.0",
+                "VCArch": "x64",
+                "VCToolsInstallDir": "C:/Applications/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/$env{VCToolsVersion}",
+                "WindowsSdkDir": "C:/Windows Kits/10",
+                "WindowsSdkIncVerDir": "$env{WindowsSdkDir}/Include/$env{WindowsSDKVersion}",
+                "WindowsSdkLibVerDir": "$env{WindowsSdkDir}/Lib/$env{WindowsSDKVersion}",
+                "INCLUDE": "$env{VCToolsInstallDir}/ATLMFC/include;$env{VCToolsInstallDir}/include;$env{WindowsSdkIncVerDir}/ucrt;$env{WindowsSdkIncVerDir}/shared;$env{WindowsSdkIncVerDir}/um;$env{WindowsSdkIncVerDir}/winrt;$env{WindowsSdkIncVerDir}/cppwinrt",
+                "LIB": "$env{VCToolsInstallDir}/ATLMFC/lib/$env{VCArch};$env{VCToolsInstallDir}/lib/$env{VCArch};$env{WindowsSdkLibVerDir}/ucrt/$env{VCArch};$env{WindowsSdkLibVerDir}/um/$env{VCArch}",
+                "PATH": "$penv{PATH};$env{VCToolsInstallDir}/bin/HostX64/$env{VCArch};$env{WindowsSdkDir}/bin/$env{WindowsSDKVersion}/$env{VCArch}"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "Ninja-MSVC-Debug",
+            "displayName": "Ninja-MSVC-Debug",
+            "configurePreset": "Ninja-MSVC-Debug-Config",
+            "configuration": "Debug"
+        },
+        {
+            "name": "Ninja-MSVC-Release",
+            "displayName": "Ninja-MSVC-Release",
+            "configurePreset": "Ninja-MSVC-Release-Config",
+            "configuration": "Release"
+        }
+    ]
+}
